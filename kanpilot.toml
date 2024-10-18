@@ -7,8 +7,30 @@ id = "process1"
 name = "To Do"
 
   [[processes.tasks]]
-  id = "task1"
-  title = "This is a new feature"
+  id = "xzxavgpxwjntje5m70dz16jy"
+  title = "Create TaskQueue Module"
+  description = "<p></p>"
+  tag = "backlog"
+  linkFiles = [ ]
+  dueDate = ""
+  checkList = [ ]
+  priority = ""
+  linkCommits = [ ]
+
+  [[processes.tasks]]
+  id = "ztgz4n0tfz7x4zw1sntm0wiq"
+  title = "Code worker loop queue"
+  description = ""
+  tag = "backlog"
+  linkFiles = [ ]
+  dueDate = ""
+  checkList = [ ]
+  priority = ""
+  linkCommits = [ ]
+
+  [[processes.tasks]]
+  id = "hmudh514pbkpq5a4cm7dl0xy"
+  title = "Code task scheduler"
   description = ""
   tag = "backlog"
   linkFiles = [ ]
@@ -20,17 +42,7 @@ name = "To Do"
 [[processes]]
 id = "process2"
 name = "In Progress"
-
-  [[processes.tasks]]
-  id = "task2"
-  title = "This is a bug should be repair"
-  description = ""
-  tag = "bug"
-  linkFiles = [ ]
-  dueDate = ""
-  checkList = [ ]
-  priority = ""
-  linkCommits = [ ]
+tasks = [ ]
 
 [[processes]]
 id = "process3"
