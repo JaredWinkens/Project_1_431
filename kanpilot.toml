@@ -7,8 +7,8 @@ id = "process1"
 name = "To Do"
 
   [[processes.tasks]]
-  id = "xzxavgpxwjntje5m70dz16jy"
-  title = "Create TaskQueue Module"
+  id = "ztgz4n0tfz7x4zw1sntm0wiq"
+  title = "Implement the worker pool"
   description = "<p></p>"
   tag = "backlog"
   linkFiles = [ ]
@@ -18,20 +18,9 @@ name = "To Do"
   linkCommits = [ ]
 
   [[processes.tasks]]
-  id = "ztgz4n0tfz7x4zw1sntm0wiq"
-  title = "Code worker loop queue"
-  description = ""
-  tag = "backlog"
-  linkFiles = [ ]
-  dueDate = ""
-  checkList = [ ]
-  priority = ""
-  linkCommits = [ ]
-
-  [[processes.tasks]]
   id = "hmudh514pbkpq5a4cm7dl0xy"
-  title = "Code task scheduler"
-  description = ""
+  title = "Implement the task submission interface"
+  description = "<p></p>"
   tag = "backlog"
   linkFiles = [ ]
   dueDate = ""
@@ -42,7 +31,28 @@ name = "To Do"
 [[processes]]
 id = "process2"
 name = "In Progress"
-tasks = [ ]
+
+  [[processes.tasks]]
+  id = "xzxavgpxwjntje5m70dz16jy"
+  title = "Implement the priority queue"
+  description = "<p></p>"
+  tag = "backlog"
+  linkFiles = [ ]
+  dueDate = ""
+  checkList = [ ]
+  priority = ""
+  linkCommits = [ ]
+
+  [[processes.tasks]]
+  id = "kv0q7ymaawukglk8r60nkg9w"
+  title = "Work on documentation"
+  description = ""
+  tag = "backlog"
+  linkFiles = [ ]
+  dueDate = ""
+  checkList = [ ]
+  priority = ""
+  linkCommits = [ ]
 
 [[processes]]
 id = "process3"
