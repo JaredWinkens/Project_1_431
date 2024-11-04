@@ -1,33 +1,24 @@
-open Eio
+open Eio.Std;;
 
-(* Task type with priority and action *)
-type task = {
-  priority : int;
-  action : unit -> unit;
-}
+(* Define a task type with a priority and a work function *)
+type 'a task = { priority: int; work: unit -> 'a }
 
-(* Priority Queue implemented as a sorted list *)
-module TaskPriorityQueue = struct
-  type t = task list ref
+(* Define a simple priority queue using a list *)
+module TaskQueue = struct
+  type 'a t = 'a task list ref
 
-  let create () : t = ref []
+  let create () = ref []
 
-  (* Insert task by maintaining sorted order (higher priority first) *)
-  let add_task queue task =
-    let rec insert sorted = function
-      | [] -> List.rev_append sorted [task]
-      | h :: t as rest ->
-        if task.priority > h.priority then
-          List.rev_append sorted (task :: rest)
-        else
-          insert (h :: sorted) t
-    in
-    queue := insert [] !queue
+  let add queue task =
+    queue := List.sort (fun t1 t2 -> compare t2.priority t1.priority) (task :: !queue)
 
-  let pop_task queue =
+  let pop queue =
     match !queue with
     | [] -> None
-    | h :: t ->
-        queue := t;
-        Some h
+    | task :: rest ->
+        queue := rest;
+        Some task
 end
+(*Sawyer*)
+
+
