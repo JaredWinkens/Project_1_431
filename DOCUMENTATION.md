@@ -29,4 +29,27 @@
 
 ## Code
 
-**Implement Priority Queue:** Implement a priority queue using a heap. Tasks can be represented as a tuple containing the task's function and its priority.
+**Task Definition:** The `task` type contains a priority and a work function that represents the task to be executed.
+
+**Task Queue:** The `TaskQueue` module is a simple priority queue implemented using a list. When adding a task, the list is sorted based on the priority (higher values have higher priority).
+
+**Worker Loop:** The `worker_loop` function processes tasks from the queue. If the queue is empty, it yields and waits for new tasks. When a task is available, it executes it and continues.
+
+**Scheduler Function:** The `scheduler` function initializes the task queue and forks a specified number of worker fibers to process tasks concurrently.
+
+**Task Submission:** The `task_submit` function adds tasks to the task queue.
+
+**Main Function:** ...
+
+## Running the App
+
+1. Make sure you have `Eio` installed in your OCaml environment.
+
+2. Create a new project as described and add the provided code in `app.ml`.
+
+3. Run the project using Dune:
+
+  ```
+  dune build
+  dune exec ./app.exe
+  ```
