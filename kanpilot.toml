@@ -7,20 +7,9 @@ id = "process1"
 name = "To Do"
 
   [[processes.tasks]]
-  id = "ztgz4n0tfz7x4zw1sntm0wiq"
-  title = "Implement the worker pool"
-  description = "<p></p>"
-  tag = "backlog"
-  linkFiles = [ ]
-  dueDate = ""
-  checkList = [ ]
-  priority = ""
-  linkCommits = [ ]
-
-  [[processes.tasks]]
-  id = "hmudh514pbkpq5a4cm7dl0xy"
-  title = "Implement the task submission interface"
-  description = "<p></p>"
+  id = "g1bxe3m7xzsodbgabjmj4cdq"
+  title = "Implement the main function"
+  description = ""
   tag = "backlog"
   linkFiles = [ ]
   dueDate = ""
@@ -33,20 +22,9 @@ id = "process2"
 name = "In Progress"
 
   [[processes.tasks]]
-  id = "xzxavgpxwjntje5m70dz16jy"
-  title = "Implement the priority queue"
-  description = "<p></p>"
-  tag = "backlog"
-  linkFiles = [ ]
-  dueDate = ""
-  checkList = [ ]
-  priority = ""
-  linkCommits = [ ]
-
-  [[processes.tasks]]
   id = "kv0q7ymaawukglk8r60nkg9w"
-  title = "Work on documentation"
-  description = ""
+  title = "Finish documentation"
+  description = "<p></p>"
   tag = "backlog"
   linkFiles = [ ]
   dueDate = ""
@@ -57,4 +35,47 @@ name = "In Progress"
 [[processes]]
 id = "process3"
 name = "Done"
-tasks = [ ]
+
+  [[processes.tasks]]
+  id = "xzxavgpxwjntje5m70dz16jy"
+  title = "Implement the priority queue module"
+  description = "<p></p>"
+  tag = "backlog"
+  linkFiles = [ ]
+  dueDate = ""
+  checkList = [ ]
+  priority = ""
+  linkCommits = [ ]
+
+  [[processes.tasks]]
+  id = "ztgz4n0tfz7x4zw1sntm0wiq"
+  title = "Implement the worker pool function"
+  description = "<p></p>"
+  tag = "backlog"
+  linkFiles = [ ]
+  dueDate = ""
+  checkList = [ ]
+  priority = ""
+  linkCommits = [ ]
+
+  [[processes.tasks]]
+  id = "kjdeti2ngp1yx8tl97ea6x8e"
+  title = "Implement the scheduler function"
+  description = ""
+  tag = "backlog"
+  linkFiles = [ ]
+  dueDate = ""
+  checkList = [ ]
+  priority = ""
+  linkCommits = [ ]
+
+  [[processes.tasks]]
+  id = "hmudh514pbkpq5a4cm7dl0xy"
+  title = "Implement the task submission function"
+  description = "<p></p>"
+  tag = "backlog"
+  linkFiles = [ ]
+  dueDate = ""
+  checkList = [ ]
+  priority = ""
+  linkCommits = [ ]
