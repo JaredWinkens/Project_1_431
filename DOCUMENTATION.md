@@ -39,7 +39,7 @@
 
 **Task Submission:** The `task_submit` function adds tasks to the task queue.
 
-**Main Function:** ...
+**Main Function:** The `main` function gives the workers tasks based on priority and are executed concurrenttly. It will do the high priority tasks first, but because the workers run in parallel, multiple tasks are finished at the same time. Then tells you when tasks are done 
 
 ## Running the App
 

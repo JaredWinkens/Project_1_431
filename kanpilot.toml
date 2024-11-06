@@ -5,32 +5,12 @@ skipFiles = [ ".gitignore", "package.json" ]
 [[processes]]
 id = "process1"
 name = "To Do"
-
-  [[processes.tasks]]
-  id = "g1bxe3m7xzsodbgabjmj4cdq"
-  title = "Implement the main function"
-  description = ""
-  tag = "backlog"
-  linkFiles = [ ]
-  dueDate = ""
-  checkList = [ ]
-  priority = ""
-  linkCommits = [ ]
+tasks = [ ]
 
 [[processes]]
 id = "process2"
 name = "In Progress"
-
-  [[processes.tasks]]
-  id = "kv0q7ymaawukglk8r60nkg9w"
-  title = "Finish documentation"
-  description = "<p></p>"
-  tag = "backlog"
-  linkFiles = [ ]
-  dueDate = ""
-  checkList = [ ]
-  priority = ""
-  linkCommits = [ ]
+tasks = [ ]
 
 [[processes]]
 id = "process3"
@@ -72,6 +52,28 @@ name = "Done"
   [[processes.tasks]]
   id = "hmudh514pbkpq5a4cm7dl0xy"
   title = "Implement the task submission function"
+  description = "<p></p>"
+  tag = "backlog"
+  linkFiles = [ ]
+  dueDate = ""
+  checkList = [ ]
+  priority = ""
+  linkCommits = [ ]
+
+  [[processes.tasks]]
+  id = "g1bxe3m7xzsodbgabjmj4cdq"
+  title = "Implement the main function"
+  description = ""
+  tag = "backlog"
+  linkFiles = [ ]
+  dueDate = ""
+  checkList = [ ]
+  priority = ""
+  linkCommits = [ ]
+
+  [[processes.tasks]]
+  id = "kv0q7ymaawukglk8r60nkg9w"
+  title = "Finish documentation"
   description = "<p></p>"
   tag = "backlog"
   linkFiles = [ ]

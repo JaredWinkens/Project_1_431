@@ -45,4 +45,22 @@ let submit_task queue task =
   TaskQueue.add queue task
 (*Jared*)
 
+(* Example usage *)
+let () =
+  Eio_main.run (fun () ->
+    let queue = scheduler 4 in  (* Start scheduler with 4 worker fibers *)
 
+    (* Submit some tasks *)
+    for i = 1 to 10 do
+      let task = {
+        priority = Random.int 10;  (* Random priority between 0 and 9 *)
+        work = (fun () ->
+          Printf.printf "Executing task with priority %d\n" i;
+          Eio.Time.sleep (Random.float 1.0))  (* Simulate work *)
+      } in
+      submit_task queue task;
+    done;
+    Eio.Time.sleep 2.0;  (* Wait for a moment to let tasks complete *)
+    Printf.printf "All tasks submitted.\n"
+  )
+  (*Aiden*)
