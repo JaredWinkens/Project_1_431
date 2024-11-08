@@ -15,16 +15,23 @@
 
 ## Setup:
 
-**Initialize dune project**
+**Initialize dune project:** Run the following command in your terminal
 
 `dune init <project_name>`
+
+**Get Eio:** Run the following command in your terminal
+
+`opam install eio_main utop`
+
+*See the full Eio documentation here:* https://github.com/ocaml-multicore/eio
 
 **Add Dependencies:** In your dune file, add the necessary dependencies, including eio. You might also want to add base for easier list and queue management.
 
 ```
 (executable
-  (name <project_name>)
-  (libraries eio base))
+ (public_name <project_name>)
+ (name app)
+ (libraries eio eio_linux))
 ```
 
 ## Code
