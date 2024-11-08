@@ -46,13 +46,13 @@
 
 **Task Submission:** The `task_submit` function adds tasks to the task queue.
 
-**Main Function:** The `main` function gives the workers tasks based on priority and are executed concurrenttly. It will do the high priority tasks first, but because the workers run in parallel, multiple tasks are finished at the same time. Then tells you when tasks are done 
+**Main Function:** The `main` function gives the workers tasks based on priority and are executed concurrently. It will do the high priority tasks first, but because the workers run in parallel, multiple tasks are finished at the same time. It then tells you when tasks are done. 
 
 ## Running the App
 
 1. Make sure you have `Eio` installed in your OCaml environment.
 
-2. Create a new project as described and add the provided code in `app.ml`.
+2. Create a new dune project as described above and code the application in `app.ml`.
 
 3. Run the project using Dune:
 
