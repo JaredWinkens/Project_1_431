@@ -1,15 +1,13 @@
-open Eio.Std;;
+open Eio;;
 
 (* A task type with a priority and a work function *)
 type 'a task = { priority: int; work: unit -> 'a }
 
 (* A simple priority queue using a list *)
 module TaskQueue = struct
-  type 'a t = 'a task list ref
+  let create () : 'a task list ref = ref []
 
-  let create () = ref []
-
-  let add queue task =
+  let add (queue: 'a task list ref) (task: 'a task) =
     queue := List.sort (fun t1 t2 -> compare t2.priority t1.priority) (task :: !queue)
 
   let pop queue =
@@ -22,21 +20,21 @@ end
 (*Sawyer*)
 
 (* Function to process tasks from the queue *)
-let rec worker_loop (queue: unit TaskQueue.t) =
+let rec worker_loop (queue: 'a task list ref) clock =
   match TaskQueue.pop queue with
   | None ->
       Eio.Fiber.yield ();  (* Yield and wait for tasks *)
-      worker_loop queue
+      worker_loop queue clock
   | Some task ->
       task.work ();  (* Execute the task *)
-      worker_loop queue
+      worker_loop queue clock
 
 (* Function to start worker fibers *)
-let scheduler num_workers =
+let scheduler env num_workers =
   let queue = TaskQueue.create () in
   Switch.run (fun sw ->
     for _ = 1 to num_workers do
-      Fiber.fork ~sw (fun () -> worker_loop queue)
+      Fiber.fork ~sw (fun () -> worker_loop queue env#clock) (* Pass clock to worker *)
   done;
   queue)
 
@@ -47,8 +45,8 @@ let submit_task queue task =
 
 (* Example usage *)
 let () =
-  Eio_main.run (fun env ->
-    let queue = scheduler 4 in  (* Start scheduler with 4 worker fibers *)
+  Eio_linux.run (fun env ->
+    let queue = scheduler env 4 in  (* Start scheduler with 4 worker fibers *)
 
     (* Submit some tasks *)
     for i = 1 to 10 do
@@ -56,11 +54,11 @@ let () =
         priority = Random.int 10;  (* Random priority between 0 and 9 *)
         work = (fun () ->
           Printf.printf "Executing task with priority %d\n" i;
-          Eio.Time.sleep env (Random.float 1.0))  (* Simulate work *)
+          Eio.Time.sleep env#clock (Random.float 1.0) )  (* Simulate work *)
       } in
       submit_task queue task;
     done;
-    Eio.Time.sleep env 2.0;  (* Wait for a moment to let tasks complete *)
+    Eio.Time.sleep env#clock 2.0;  (* Wait for a moment to let tasks complete *)
     Printf.printf "All tasks submitted.\n"
   )
   (*Aiden*)
